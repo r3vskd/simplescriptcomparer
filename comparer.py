@@ -8,17 +8,18 @@ def display_banner():
 ███████ ██      ██      ██████  ██ ██████     ██        ██      ██    ██ ██ ████ ██ ██████  ███████ ██████  █████   ██████  
      ██ ██      ██      ██   ██ ██ ██         ██        ██      ██    ██ ██  ██  ██ ██      ██   ██ ██   ██ ██      ██   ██ 
 ███████  ██████  ██████ ██   ██ ██ ██         ██         ██████  ██████  ██      ██ ██      ██   ██ ██   ██ ███████ ██   ██                                                                                                                                                                                                                                                                                                                            
- Author: r3vskd                 
-          ''' + Style.RESET_ALL)
+ Author: r3vskd ''')
     
+display_banner()
+
 script1=input("Por favor ingresa el nombre del primer archivo con su ruta ===> ")
 script2=input("Ahora ingresa el combre del segundo archivo que quieras comparar ===> ")
 
 try:
-    with open(script1, 'r') as file1:
+    with open(script1, 'r', encoding='utf8') as file1:
         file1_info = file1.readlines()
         
-        with open(script2, 'r') as file2:
+        with open(script2, 'r', encoding='utf8') as file2:
             file2_info = file2.readlines()
             
             diff = difflib.unified_diff(
@@ -33,8 +34,7 @@ except FileNotFoundError as e:
     print(f"Error: {e}")
 except Exception as e:
     print(f"An unexpected error has occurred : {e}")            
-                
-
+            
 #def comparador():
 #    difflib.SequenceMatcher(None, script1.read(), script2.read())
 #    for line in difflib.unified_diff(script1, script2):
@@ -47,4 +47,5 @@ except Exception as e:
 #    for line in difflib.unified_diff(script1, script2):
 #        print(line)
 #
+#func()
 #func()
