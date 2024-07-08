@@ -1,6 +1,8 @@
 import difflib
 from colorama import Fore, Style, init
 
+init(autoreset=True)
+
 def display_banner():
     print(Fore.RED + '''   
 ███████  ██████  ██████ ██████  ██ ██████  ████████      ██████  ██████  ███    ███ ██████   █████  ██████  ███████ ██████  
@@ -12,8 +14,8 @@ def display_banner():
     
 display_banner()
 
-script1=input("Por favor ingresa el nombre del primer archivo con su ruta ===> ")
-script2=input("Ahora ingresa el combre del segundo archivo que quieras comparar ===> ")
+script1=input(Fore.GREEN + ''' Por favor ingresa el nombre del primer archivo con su ruta ===> ''')
+script2=input(Fore.GREEN + ''' Ahora ingresa el combre del segundo archivo que quieras comparar ===> ''')
 
 try:
     with open(script1, 'r', encoding='utf8') as file1:
@@ -47,5 +49,4 @@ except Exception as e:
 #    for line in difflib.unified_diff(script1, script2):
 #        print(line)
 #
-#func()
 #func()
